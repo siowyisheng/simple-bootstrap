@@ -10,38 +10,15 @@ _Bootstrap 4 explained simply._
 - [Overview](#overview)
 - [Installation](#installation)
 - [Components](#components)
-  - [Jumbotron](#jumbotron)
-  - [Navbar](#navbar)
-  - [Breadcrumb](#breadcrumb)
-  - [Button](#button)
-  - [Button group](#button-group)
-  - [Card](#card)
-  - [Carousel](#carousel)
-  - [Collapse/accordion](#collapseaccordion)
+  - [Content layout](#content-layout)
+  - [User interaction](#user-interaction)
+  - [Navigation](#navigation)
+  - [Notifications](#notifications)
 - [Layout and Format](#layout-and-format)
-  - [Set basic padding and margins for a div](#set-basic-padding-and-margins-for-a-div)
-  - [Stack elements on a small screen](#stack-elements-on-a-small-screen)
-  - [Create media objects (combinations of html elements) for reuse](#create-media-objects-combinations-of-html-elements-for-reuse)
-  - [Remove default browser list bullets](#remove-default-browser-list-bullets)
-  - [Hide an element on small/large screens](#hide-an-element-on-smalllarge-screens)
-  - [Add/remove element margins](#addremove-element-margins)
-  - [Add/remove element padding](#addremove-element-padding)
-  - [Center a fixed-width div](#center-a-fixed-width-div)
-  - [Style subtitles](#style-subtitles)
-  - [Style large headings](#style-large-headings)
-  - [Center text](#center-text)
-  - [Make an inline list (eg. for a navbar)](#make-an-inline-list-eg-for-a-navbar)
-  - [Make an image responsive to the parent](#make-an-image-responsive-to-the-parent)
-  - [Style images](#style-images)
-  - [Align an image](#align-an-image)
-  - [Make a responsive table](#make-a-responsive-table)
-  - [Add div borders](#add-div-borders)
-  - [Float multiple elements within the same block](#float-multiple-elements-within-the-same-block)
-  - [Make a "close" icon](#make-a-close-icon)
-  - [Style text colors](#style-text-colors)
-  - [Set background color](#set-background-color)
-  - [Set div width as percentage](#set-div-width-as-percentage)
-  - [Remove the default underlines from links](#remove-the-default-underlines-from-links)
+  - [Alignment](#alignment)
+  - [Spacing](#spacing)
+  - [Mobile responsiveness](#mobile-responsiveness)
+  - [Styling](#styling)
 
 ## Foreward
 
@@ -89,48 +66,128 @@ Alternatively, you can [install the necessary files locally](https://getbootstra
 
 ## Components
 
-Jumbotron - Singular component with key marketing message (probably on homeview).
+### Content layout
 
-Alerts - Feedback messages to user actions.
-Badge - Labels and notification counts.
-Breadcrumb - Current page location within the site's structure.
-Buttons - Target areas for actions in forms or dialogs.
-Button group - Groups of related buttons.
-Card - General purpose content containers
-Carousel - Collection of cycle-able images
-Collapse - Toggle visibility of large elements
-Dropdowns - Toggle visibility of a list of actions
-Forms - Get input from the user.
-Input group - Customize inputs.
-List group - Show list content.
-Media object - Highly-repetitive, nestable component.
-Modal - Important content allowing easy return to the current page.
-Navbar - Navigation bar
-Pagination - Page navigation for multi-page content
-Scrollspy - Show active section on a fixed navbar
-Spinners - Mark content that is loading
-Toasts - Notifications
-Tooltips - Extra information on certain terms/concepts
+#### Card
 
-### Jumbotron
+General purpose content containers
 
-### Navbar
+#### Jumbotron
 
-### Breadcrumb
+Singular component with key marketing message (probably on homeview).
 
-### Button
+#### Carousel
 
-### Button group
+Collection of cycle-able images
 
-### Card
+#### Collapse
 
-### Carousel
+Toggle visibility of large elements
 
-### Collapse/accordion
+#### List group
+
+Show list content
+
+#### Media object
+
+Highly-repetitive, nestable component.
+
+#### Modal
+
+Important content allowing easy return to the current page.
+
+### User interaction
+
+#### Forms
+
+Get input from the user.
+
+#### Buttons
+
+Target areas for actions in forms or dialogs.
+
+#### Button group
+
+Groups of related buttons.
+
+#### Alerts
+
+Feedback messages to user actions.
+
+### Navigation
+
+#### Navbar
+
+Navigation bar
+
+#### Scrollspy
+
+Show active section on a fixed navbar
+
+#### Breadcrumb
+
+Current page location within the site's structure.
+
+### Notifications
+
+#### Badge
+
+Labels and notification counts
+
+#### Toasts
+
+Notifications
+
+#### Tooltips
+
+Extra information on certain terms/concepts
 
 ## Layout and Format
 
-### Set basic padding and margins for a div
+### Alignment
+
+#### Center a fixed-width div
+
+```html
+<div class="mx-auto" style="width: 200px;">Centered element</div>
+```
+
+#### Center text
+
+```html
+<p class="text-center">Your content</p>
+```
+
+#### Float multiple elements within the same block
+
+```html
+<div class="bg-info clearfix">
+  <button type="button" class="btn btn-secondary float-left">
+    Example Button floated left
+  </button>
+  <button type="button" class="btn btn-secondary float-right">
+    Example Button floated right
+  </button>
+</div>
+```
+
+#### Align an image
+
+```html
+<img src="..." class="float-left" alt="..." />
+
+<!-- or -->
+
+<img src="..." class="float-right" alt="..." />
+
+<!-- or -->
+
+<img src="..." class="mx-auto d-block" alt="..." />
+```
+
+### Spacing
+
+#### Set basic padding and margins for a div
 
 ```html
 <div class="container">Your content</div>
@@ -140,64 +197,7 @@ Tooltips - Extra information on certain terms/concepts
 <div class="container-fluid">Your content</div>
 ```
 
-### Stack elements on a small screen
-
-Here, the columns will stack on top of each other if the width is below 768px. Otherwise, they will be divided into 3 columns. The numbers in each row add up to 12.
-
-```html
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">Your content</div>
-    <div class="col-sm-4">Your content</div>
-    <div class="col-sm-4">Your content</div>
-  </div>
-</div>
-```
-
-### Create media objects (combinations of html elements) for reuse
-
-```html
-<div class="media">
-  <img src="..." class="mr-3" alt="..." />
-  <div class="media-body">
-    <h5 class="mt-0">Media heading</h5>
-    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-    ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
-    viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
-    lacinia congue felis in faucibus.
-  </div>
-</div>
-```
-
-### Remove default browser list bullets
-
-```html
-<ul class="list-unstyled">
-  <li>Your content</li>
-  <li>Your content</li>
-</ul>
-
-<!-- or -->
-
-<ol class="list-unstyled">
-  <li>Your content</li>
-  <li>Your content</li>
-</ol>
-```
-
-### Hide an element on small/large screens
-
-```html
-<div class="d-none d-sm-block">
-  This doesn't appear on small screens narrower than 768px.
-</div>
-
-<div class="d-block d-sm-none">
-  This doesn't appear on screens 768px and wider.
-</div>
-```
-
-### Add/remove element margins
+#### Add/remove element margins
 
 You can use 0-5 for different levels of margin.
 
@@ -215,7 +215,7 @@ You can use 0-5 for different levels of margin.
 <div class="mr-0">Your content</div>
 ```
 
-### Add/remove element padding
+#### Add/remove element padding
 
 You can use 0-5 for different levels of padding.
 
@@ -233,77 +233,41 @@ You can use 0-5 for different levels of padding.
 <div class="py-0">Your content</div>
 ```
 
-### Center a fixed-width div
+### Mobile responsiveness
+
+#### Hide an element on small/large screens
 
 ```html
-<div class="mx-auto" style="width: 200px;">Centered element</div>
+<div class="d-none d-sm-block">
+  This doesn't appear on small screens narrower than 768px.
+</div>
+
+<div class="d-block d-sm-none">
+  This doesn't appear on screens 768px and wider.
+</div>
 ```
 
-### Style subtitles
+#### Stack elements on a small screen
+
+Here, the columns will stack on top of each other if the width is below 768px. Otherwise, they will be divided into 3 columns. The numbers in each row add up to 12.
 
 ```html
-<p class="lead">Your subtitle</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">Your content</div>
+    <div class="col-sm-4">Your content</div>
+    <div class="col-sm-4">Your content</div>
+  </div>
+</div>
 ```
 
-### Style large headings
-
-You can use 1-4 (smallest) for different sizes.
-
-```html
-<h1 class="display-1">Your large heading</h1>
-```
-
-### Center text
-
-```html
-<p class="text-center">Your content</p>
-```
-
-### Make an inline list (eg. for a navbar)
-
-```html
-<ul class="list-inline">
-  <li class="list-inline-item">Lorem ipsum</li>
-  <li class="list-inline-item">Phasellus iaculis</li>
-  <li class="list-inline-item">Nulla volutpat</li>
-</ul>
-```
-
-### Make an image responsive to the parent
+#### Make an image responsive to the parent
 
 ```html
 <img src="..." class="img-fluid" alt="Responsive image" />
 ```
 
-### Style images
-
-```html
-<img src="..." class="rounded" alt="Responsive image" />
-
-<!-- or -->
-
-<img src="..." class="rounded-circle" alt="Responsive image" />
-
-<!-- or -->
-
-<img src="..." class="rounded-pill" alt="Responsive image" />
-```
-
-### Align an image
-
-```html
-<img src="..." class="float-left" alt="..." />
-
-<!-- or -->
-
-<img src="..." class="float-right" alt="..." />
-
-<!-- or -->
-
-<img src="..." class="mx-auto d-block" alt="..." />
-```
-
-### Make a responsive table
+#### Make a responsive table
 
 ```html
 <div class="table-responsive">
@@ -323,42 +287,45 @@ You can use 1-4 (smallest) for different sizes.
 </div>
 ```
 
-### Add div borders
+### Styling
+
+#### Remove default browser list bullets
 
 ```html
-<div class="border">Your content</div>
+<ul class="list-unstyled">
+  <li>Your content</li>
+  <li>Your content</li>
+</ul>
 
 <!-- or -->
 
-<div class="border-top">Your content</div>
+<ol class="list-unstyled">
+  <li>Your content</li>
+  <li>Your content</li>
+</ol>
+```
+
+#### Remove the default underlines from links
+
+```html
+<a class="text-decoration-none">Your link</a>
+```
+
+#### Style images
+
+```html
+<img src="..." class="rounded" alt="Responsive image" />
 
 <!-- or -->
 
-<div class="border-right">Your content</div>
+<img src="..." class="rounded-circle" alt="Responsive image" />
+
+<!-- or -->
+
+<img src="..." class="rounded-pill" alt="Responsive image" />
 ```
 
-### Float multiple elements within the same block
-
-```html
-<div class="bg-info clearfix">
-  <button type="button" class="btn btn-secondary float-left">
-    Example Button floated left
-  </button>
-  <button type="button" class="btn btn-secondary float-right">
-    Example Button floated right
-  </button>
-</div>
-```
-
-### Make a "close" icon
-
-```html
-<button type="button" class="close" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
-</button>
-```
-
-### Style text colors
+#### Style text colors
 
 ```html
 <p class="text-primary">Your text</p>
@@ -370,7 +337,7 @@ You can use 1-4 (smallest) for different sizes.
 <p class="text-muted">Your text</p>
 ```
 
-### Set background color
+#### Set background color
 
 ```html
 <p class="bg-primary text-white">Your text</p>
@@ -384,18 +351,30 @@ You can use 1-4 (smallest) for different sizes.
 <p class="bg-white text-dark">Your text</p>
 ```
 
-### Set div width as percentage
+#### Style subtitles
 
 ```html
-<div class="w-25 p-3" style="background-color: #eee;">Width 25%</div>
-<div class="w-50 p-3" style="background-color: #eee;">Width 50%</div>
-<div class="w-75 p-3" style="background-color: #eee;">Width 75%</div>
-<div class="w-100 p-3" style="background-color: #eee;">Width 100%</div>
-<div class="w-auto p-3" style="background-color: #eee;">Width auto</div>
+<p class="lead">Your subtitle</p>
 ```
 
-### Remove the default underlines from links
+#### Style large headings
+
+You can use 1-4 (smallest) for different sizes.
 
 ```html
-<a class="text-decoration-none">Your link</a>
+<h1 class="display-1">Your large heading</h1>
+```
+
+#### Add div borders
+
+```html
+<div class="border">Your content</div>
+
+<!-- or -->
+
+<div class="border-top">Your content</div>
+
+<!-- or -->
+
+<div class="border-right">Your content</div>
 ```
