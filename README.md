@@ -6,82 +6,131 @@ _Bootstrap 4 explained simply._
 
 ## Table of Contents <!-- omit in toc -->
 
+- [Foreward](#foreward)
 - [Overview](#overview)
-- [Notation](#notation)
 - [Installation](#installation)
-- [Set basic padding and margins for a div](#set-basic-padding-and-margins-for-a-div)
-- [Stack elements on a small screen](#stack-elements-on-a-small-screen)
-- [Create media objects (combinations of html elements) for reuse](#create-media-objects-combinations-of-html-elements-for-reuse)
-- [Remove default browser list bullets](#remove-default-browser-list-bullets)
-- [Hide an element on small/large screens](#hide-an-element-on-smalllarge-screens)
-- [Add/remove element margins](#addremove-element-margins)
-- [Add/remove element padding](#addremove-element-padding)
-- [Center a fixed-width div](#center-a-fixed-width-div)
-- [Style subtitles](#style-subtitles)
-- [Style large headings](#style-large-headings)
-- [Center text](#center-text)
-- [Make an inline list (eg. for a navbar)](#make-an-inline-list-eg-for-a-navbar)
-- [Make an image responsive to the parent](#make-an-image-responsive-to-the-parent)
-- [Style images](#style-images)
-- [Align an image](#align-an-image)
-- [Make a responsive table](#make-a-responsive-table)
-- [Add div borders](#add-div-borders)
-- [Float multiple elements within the same block](#float-multiple-elements-within-the-same-block)
-- [Make a "close" icon](#make-a-close-icon)
-- [Style text colors](#style-text-colors)
-- [Set background color](#set-background-color)
-- [Set div width as percentage](#set-div-width-as-percentage)
-- [Remove the default underlines from links](#remove-the-default-underlines-from-links)
-- [23 components](#23-components)
-- [Jumbotron](#jumbotron)
-- [Navbar](#navbar)
-- [Breadcrumb](#breadcrumb)
-- [Button](#button)
-- [Button group](#button-group)
-- [Card](#card)
-- [Carousel](#carousel)
-- [Collapse/accordion](#collapseaccordion)
+- [Components](#components)
+  - [Jumbotron](#jumbotron)
+  - [Navbar](#navbar)
+  - [Breadcrumb](#breadcrumb)
+  - [Button](#button)
+  - [Button group](#button-group)
+  - [Card](#card)
+  - [Carousel](#carousel)
+  - [Collapse/accordion](#collapseaccordion)
+- [Layout and Format](#layout-and-format)
+  - [Set basic padding and margins for a div](#set-basic-padding-and-margins-for-a-div)
+  - [Stack elements on a small screen](#stack-elements-on-a-small-screen)
+  - [Create media objects (combinations of html elements) for reuse](#create-media-objects-combinations-of-html-elements-for-reuse)
+  - [Remove default browser list bullets](#remove-default-browser-list-bullets)
+  - [Hide an element on small/large screens](#hide-an-element-on-smalllarge-screens)
+  - [Add/remove element margins](#addremove-element-margins)
+  - [Add/remove element padding](#addremove-element-padding)
+  - [Center a fixed-width div](#center-a-fixed-width-div)
+  - [Style subtitles](#style-subtitles)
+  - [Style large headings](#style-large-headings)
+  - [Center text](#center-text)
+  - [Make an inline list (eg. for a navbar)](#make-an-inline-list-eg-for-a-navbar)
+  - [Make an image responsive to the parent](#make-an-image-responsive-to-the-parent)
+  - [Style images](#style-images)
+  - [Align an image](#align-an-image)
+  - [Make a responsive table](#make-a-responsive-table)
+  - [Add div borders](#add-div-borders)
+  - [Float multiple elements within the same block](#float-multiple-elements-within-the-same-block)
+  - [Make a "close" icon](#make-a-close-icon)
+  - [Style text colors](#style-text-colors)
+  - [Set background color](#set-background-color)
+  - [Set div width as percentage](#set-div-width-as-percentage)
+  - [Remove the default underlines from links](#remove-the-default-underlines-from-links)
+
+## Foreward
+
+This opinionated guide omits components which are easily executed without bootstrap, and focuses on the perceived most common use cases. Be sure to refer to [the official documentation](https://getbootstrap.com/docs/4.2/getting-started/introduction/) for greater detail.
 
 ## Overview
 
 Build your website quickly using **components**, then **format and lay them out**, all by giving html elements specific classes.
 
-## Notation
-
 ## Installation
 
-Link the dependencies (jQuery and Popper.js)
+The easiest installation is via CDN. Just include the below in your HTML.
 
 ```html
-<script
-  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-  crossorigin="anonymous"
-></script>
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-  integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-  crossorigin="anonymous"
-></script>
+<head>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous"
+  />
+  Other elements...
+</head>
+<body>
+  Your elements...
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"
+  ></script>
+</body>
 ```
 
-Link the CDN version below or [the downloaded compiled version](https://getbootstrap.com/docs/4.1/getting-started/download/#compiled-css-and-js) within <head>.
+Alternatively, you can [install the necessary files locally](https://getbootstrap.com/docs/4.2/getting-started/download/).
 
-```html
-<link
-  rel="stylesheet"
-  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-  crossorigin="anonymous"
-/>
-<script
-  src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-  integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-  crossorigin="anonymous"
-></script>
-```
+## Components
 
-## Set basic padding and margins for a div
+Jumbotron - Singular component with key marketing message (probably on homeview).
+
+Alerts - Feedback messages to user actions.
+Badge - Labels and notification counts.
+Breadcrumb - Current page location within the site's structure.
+Buttons - Target areas for actions in forms or dialogs.
+Button group - Groups of related buttons.
+Card - General purpose content containers
+Carousel - Collection of cycle-able images
+Collapse - Toggle visibility of large elements
+Dropdowns - Toggle visibility of a list of actions
+Forms - Get input from the user.
+Input group - Customize inputs.
+List group - Show list content.
+Media object - Highly-repetitive, nestable component.
+Modal - Important content allowing easy return to the current page.
+Navbar - Navigation bar
+Pagination - Page navigation for multi-page content
+Scrollspy - Show active section on a fixed navbar
+Spinners - Mark content that is loading
+Toasts - Notifications
+Tooltips - Extra information on certain terms/concepts
+
+### Jumbotron
+
+### Navbar
+
+### Breadcrumb
+
+### Button
+
+### Button group
+
+### Card
+
+### Carousel
+
+### Collapse/accordion
+
+## Layout and Format
+
+### Set basic padding and margins for a div
 
 ```html
 <div class="container">Your content</div>
@@ -91,7 +140,7 @@ Link the CDN version below or [the downloaded compiled version](https://getboots
 <div class="container-fluid">Your content</div>
 ```
 
-## Stack elements on a small screen
+### Stack elements on a small screen
 
 Here, the columns will stack on top of each other if the width is below 768px. Otherwise, they will be divided into 3 columns. The numbers in each row add up to 12.
 
@@ -105,7 +154,7 @@ Here, the columns will stack on top of each other if the width is below 768px. O
 </div>
 ```
 
-## Create media objects (combinations of html elements) for reuse
+### Create media objects (combinations of html elements) for reuse
 
 ```html
 <div class="media">
@@ -120,7 +169,7 @@ Here, the columns will stack on top of each other if the width is below 768px. O
 </div>
 ```
 
-## Remove default browser list bullets
+### Remove default browser list bullets
 
 ```html
 <ul class="list-unstyled">
@@ -136,7 +185,7 @@ Here, the columns will stack on top of each other if the width is below 768px. O
 </ol>
 ```
 
-## Hide an element on small/large screens
+### Hide an element on small/large screens
 
 ```html
 <div class="d-none d-sm-block">
@@ -148,7 +197,7 @@ Here, the columns will stack on top of each other if the width is below 768px. O
 </div>
 ```
 
-## Add/remove element margins
+### Add/remove element margins
 
 You can use 0-5 for different levels of margin.
 
@@ -166,7 +215,7 @@ You can use 0-5 for different levels of margin.
 <div class="mr-0">Your content</div>
 ```
 
-## Add/remove element padding
+### Add/remove element padding
 
 You can use 0-5 for different levels of padding.
 
@@ -184,19 +233,19 @@ You can use 0-5 for different levels of padding.
 <div class="py-0">Your content</div>
 ```
 
-## Center a fixed-width div
+### Center a fixed-width div
 
 ```html
 <div class="mx-auto" style="width: 200px;">Centered element</div>
 ```
 
-## Style subtitles
+### Style subtitles
 
 ```html
 <p class="lead">Your subtitle</p>
 ```
 
-## Style large headings
+### Style large headings
 
 You can use 1-4 (smallest) for different sizes.
 
@@ -204,13 +253,13 @@ You can use 1-4 (smallest) for different sizes.
 <h1 class="display-1">Your large heading</h1>
 ```
 
-## Center text
+### Center text
 
 ```html
 <p class="text-center">Your content</p>
 ```
 
-## Make an inline list (eg. for a navbar)
+### Make an inline list (eg. for a navbar)
 
 ```html
 <ul class="list-inline">
@@ -220,13 +269,13 @@ You can use 1-4 (smallest) for different sizes.
 </ul>
 ```
 
-## Make an image responsive to the parent
+### Make an image responsive to the parent
 
 ```html
 <img src="..." class="img-fluid" alt="Responsive image" />
 ```
 
-## Style images
+### Style images
 
 ```html
 <img src="..." class="rounded" alt="Responsive image" />
@@ -240,7 +289,7 @@ You can use 1-4 (smallest) for different sizes.
 <img src="..." class="rounded-pill" alt="Responsive image" />
 ```
 
-## Align an image
+### Align an image
 
 ```html
 <img src="..." class="float-left" alt="..." />
@@ -254,7 +303,7 @@ You can use 1-4 (smallest) for different sizes.
 <img src="..." class="mx-auto d-block" alt="..." />
 ```
 
-## Make a responsive table
+### Make a responsive table
 
 ```html
 <div class="table-responsive">
@@ -274,7 +323,7 @@ You can use 1-4 (smallest) for different sizes.
 </div>
 ```
 
-## Add div borders
+### Add div borders
 
 ```html
 <div class="border">Your content</div>
@@ -288,7 +337,7 @@ You can use 1-4 (smallest) for different sizes.
 <div class="border-right">Your content</div>
 ```
 
-## Float multiple elements within the same block
+### Float multiple elements within the same block
 
 ```html
 <div class="bg-info clearfix">
@@ -301,7 +350,7 @@ You can use 1-4 (smallest) for different sizes.
 </div>
 ```
 
-## Make a "close" icon
+### Make a "close" icon
 
 ```html
 <button type="button" class="close" aria-label="Close">
@@ -309,7 +358,7 @@ You can use 1-4 (smallest) for different sizes.
 </button>
 ```
 
-## Style text colors
+### Style text colors
 
 ```html
 <p class="text-primary">Your text</p>
@@ -321,7 +370,7 @@ You can use 1-4 (smallest) for different sizes.
 <p class="text-muted">Your text</p>
 ```
 
-## Set background color
+### Set background color
 
 ```html
 <p class="bg-primary text-white">Your text</p>
@@ -335,7 +384,7 @@ You can use 1-4 (smallest) for different sizes.
 <p class="bg-white text-dark">Your text</p>
 ```
 
-## Set div width as percentage
+### Set div width as percentage
 
 ```html
 <div class="w-25 p-3" style="background-color: #eee;">Width 25%</div>
@@ -345,26 +394,8 @@ You can use 1-4 (smallest) for different sizes.
 <div class="w-auto p-3" style="background-color: #eee;">Width auto</div>
 ```
 
-## Remove the default underlines from links
+### Remove the default underlines from links
 
 ```html
 <a class="text-decoration-none">Your link</a>
 ```
-
-## 23 components
-
-## Jumbotron
-
-## Navbar
-
-## Breadcrumb
-
-## Button
-
-## Button group
-
-## Card
-
-## Carousel
-
-## Collapse/accordion
